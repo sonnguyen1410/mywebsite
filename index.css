@@ -1,0 +1,94 @@
+h1 {
+    font-family: 'Lobster', cursive;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#Pics {
+    padding: auto;
+    padding-left: 20px;
+
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    padding: 20px;
+}
+
+#myPics {
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* remove extra space below image */
+}
+
+#Personal {
+    font-size: 20px;
+    padding: auto;
+    float: left;
+}
+
+.button {
+    background-color: rgba(93, 138, 130, 0.13);
+}
+
+a {
+    color: rgba(2, 26, 22, 0.726);
+}
+
+.resume, .linkedin {
+    color: rgb(85, 0, 182);
+    text-decoration: none;
+}
+
+.Image {
+    max-width: 50%;
+    max-height: 50%;
+    display: block; /* remove extra space below image */
+}
+
+h4 {
+    text-align: center;
+    text-transform: uppercase;
+}
+.thumbnail {
+    padding: 20px;
+}
+
+.col-md-6 {
+    padding: 10px;
+}
+
+.col-md-3 {
+    padding: 10px;
+    text-align: center;
+}
+
+#EducationAndWork, #Contact {
+    background-color: rgba(93, 138, 130, 0.13);
+}
+
+#EducationTitle, #WorkTitle {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#UTD {
+    width: 30%;
+    height: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.edu {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+}
