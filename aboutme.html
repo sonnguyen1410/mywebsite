@@ -4,8 +4,9 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="index.css">
-      <script src="https://kit.fontawesome.com/997d903f31.js" crossorigin="anonymous"></script>
-      <title>Hey, I'm Son Nguyen</title>
+      <link rel="stylesheet" href="flag-icons-master/flag-icons.min.css">
+      <script src="https://kit.fontawesome.com/b6a920bf6f.js" crossorigin="anonymous"></script>
+      <title>About Me</title>
     </head>
     <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -25,7 +26,7 @@
               <a class="nav-link" href="https://sonnyblog293497855.wordpress.com/">My Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#Contact">Contact</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
@@ -34,46 +35,97 @@
             <h1 class="display-4">About Me</h1>
         </div>
         
-        <section id="AboutMe">
-          <h2 id="AboutMeTitle">Hey, I'm Son.</h2>
+        <section>
+          <h2>Educations <i class="fas fa-graduation-cap"></i></h2>
           <div class="row">
             <div class="col-md-3" id="Pics">
-              <img id="myPics" src="pics/mypic.jpeg" alt="My picture">
+              <img id="myPics" src="pics/mypic.jpeg" alt="Grad picture">
             </div>
             <div class="col-md-9">
               <div id="Personal">
-                <p>
-                  I am from Vietnam, a beautiful country in Southeast Asia.<br><br>
-                  Technology has always been my passion, that is why I came to the US to achieve higher education in Information Technology.
-                  <br><br>
-                  Currently I am working as a Data Engineer - building robust data pipelines and transforming raw data into actionable insights.<br><br>
-                  My dream is to build an impactful product that can benefit the world.
-                </p>
-                <button type="button" class="button"><a class="resume" href="file/Resume.pdf">My Resume</a></button>
-                <button type="button" class="button"><a class="linkedin" href="https://www.linkedin.com/in/son-nguyen2001/">My LinkedIn</a></button>
+                <img id="UTD" src="./pics/UTD.jpg" alt="UTDallas logo">
+                <p class="edu"><a href="https://infosystems.utdallas.edu/bs-cis-tech/">Bachelor of Science in Information Techonology and System</a>, class of 2022</p>
+                <p class="edu"><a href="https://jindal.utdallas.edu/">Naveen Jindal School of Management</a></p>
+                <p class="edu"><a href="https://www.utdallas.edu/">The University of Texas at Dallas</a></p>
               </div>
             </div>
           </div>
         </section>
 
         <section id="EducationAndWork">
-          <h2>Education & Work</h2>
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <h3 id="EducationTitle">Education <i class="fas fa-graduation-cap"></i></h3>
-              <img id="UTD" src="./pics/UTD.jpg" alt="UTDallas logo">
-              <p class="edu"><a href="https://infosystems.utdallas.edu/bs-cis-tech/">Bachelor of Science in Information Techonology and System</a>, class of 2022</p>
-              <p class="edu"><a href="https://jindal.utdallas.edu/">Naveen Jindal School of Management</a></p>
-              <p class="edu"><a href="https://www.utdallas.edu/">The University of Texas at Dallas</a></p>
+          <h2>Work Experiences <i class="fas fa-briefcase"></i></h2>
+          <div class="timeline"> 
+            <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+              <div class="timeline__event__icon ">
+                <i class="lni-cake"></i>
+
+              </div>
+              <div class="timeline__event__date">
+                20-08-2019
+              </div>
+              <div class="timeline__event__content ">
+                <div class="timeline__event__title">
+                  Birthday
+                </div>
+                <div class="timeline__event__description">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+              <div class="timeline__event__icon">
+                <i class="lni-burger"></i>
+
+              </div>
+              <div class="timeline__event__date">
+                20-08-2019
+              </div>
+              <div class="timeline__event__content">
+                <div class="timeline__event__title">
+                  Lunch
+                </div>
+                <div class="timeline__event__description">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+              <div class="timeline__event__icon">
+                <i class="lni-slim"></i>
+
+              </div>
+              <div class="timeline__event__date">
+                20-08-2019
+              </div>
+              <div class="timeline__event__content">
+                <div class="timeline__event__title">
+                  Exercise
+                </div>
+                <div class="timeline__event__description">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+                </div>
+
+              </div>
+            </div>
+            <div class="timeline__event animated fadeInUp timeline__event--type1">
+              <div class="timeline__event__icon">
+                <i class="lni-cake"></i>
+
+              </div>
+              <div class="timeline__event__date">
+                20-08-2019
+              </div>
+              <div class="timeline__event__content">
+                <div class="timeline__event__title">
+                  Birthday
+                </div>
+                <div class="timeline__event__description">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+                </div>
+              </div>
             </div>
 
-            <div class="col-md-6 col-sm-12">
-              <h3 id="WorkTitle">Work Experiences <i class="fas fa-briefcase"></i></h3>
-              
-            </div> 
           </div>
-          </div>
-        </div>
         </section>
 
 
