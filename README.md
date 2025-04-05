@@ -1,4 +1,4 @@
 # mywebsite
 My Personal Website Repository
 
-Link: [sonhnguyen.click](http://sonhnguyen.click/)
+Link: [sonhnguyen.click](https://sonhnguyen.click/)
