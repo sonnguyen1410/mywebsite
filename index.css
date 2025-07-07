@@ -9,7 +9,6 @@ body {
 #Pics {
     padding: auto;
     padding-left: 50px;
-
 }
 
 h2 {
@@ -21,8 +20,10 @@ h2 {
 
 #myPics {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 300px;
     display: block; /* remove extra space below image */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #Personal {
