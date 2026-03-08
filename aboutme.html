@@ -1,131 +1,287 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="index.css">
-      <link rel="stylesheet" href="flag-icons-master/flag-icons.min.css">
-      <script src="https://kit.fontawesome.com/b6a920bf6f.js" crossorigin="anonymous"></script>
-      <title>About Me</title>
-    </head>
-    <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <a class="navbar-brand" href="index.html">Son</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="aboutme.html">About Me</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://sonnyblog293497855.wordpress.com/">My Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/b6a920bf6f.js" crossorigin="anonymous"></script>
+  <title>About Me — Son Hai Nguyen</title>
+
+  <style>
+    /* ── Page header ─────────────────────────────────── */
+    .page-header {
+      background: var(--navy);
+      padding: 5rem 3rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute; top: -50%; right: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(42,124,111,.25) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .page-header::after {
+      content: 'ABOUT';
+      position: absolute; right: 3rem; bottom: -1.5rem;
+      font-family: var(--serif); font-size: 9rem; font-weight: 700;
+      color: rgba(255,255,255,.04); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+    .page-header .section-label { color: var(--teal); }
+    .page-header .section-label::after { background: var(--teal); }
+    .page-header h1 {
+      font-family: var(--serif); font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 700; color: #fff;
+      letter-spacing: -.02em; line-height: 1.1;
+    }
+    .page-header p {
+      color: rgba(255,255,255,.55); font-size: 1.05rem; margin-top: 1rem; max-width: 540px;
+    }
+
+    /* ── Skills grid ────────────────────────────────── */
+    .skills-section { background: var(--bg2); }
+    .skills-inner { max-width: 1200px; margin: 0 auto; padding: 5rem 3rem; }
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .skill-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.2rem 1rem; text-align: center;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .skill-card:hover {
+      border-color: var(--teal); transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(42,124,111,.12);
+    }
+    .skill-card .skill-icon { font-size: 1.6rem; margin-bottom: .5rem; }
+    .skill-card .skill-name {
+      font-family: var(--mono); font-size: .62rem;
+      letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    }
+
+    /* ── CTA banner ─────────────────────────────────── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--teal) 0%, #1a5c52 100%);
+      padding: 4rem 3rem; text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: var(--serif); font-size: 2rem; font-weight: 700; color: #fff;
+      margin-bottom: 1rem;
+    }
+    .cta-banner p { color: rgba(255,255,255,.75); margin-bottom: 2rem; font-size: 1rem; }
+    .btn-white {
+      font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      padding: .9rem 2.2rem; border-radius: 6px;
+      background: #fff; color: var(--teal);
+      border: none; text-decoration: none;
+      transition: transform .15s, box-shadow .2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); color: var(--teal); }
+
+    @media (max-width: 768px) {
+      .page-header { padding: 3.5rem 1.5rem 3rem; }
+      .page-header::after { display: none; }
+      .skills-inner { padding: 3.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" href="index.html">Son <span>Nguyen</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="aboutme.html">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://sonnyblog293497855.wordpress.com/" target="_blank">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Header ── -->
+  <div class="page-header">
+    <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1">
+      <p class="section-label" style="opacity:0;animation:fadeUp .6s .2s forwards">My Story</p>
+      <h1 style="opacity:0;animation:fadeUp .7s .35s forwards">
+        Education &<br/>Experience
+      </h1>
+      <p style="opacity:0;animation:fadeUp .6s .5s forwards">
+        From UTD classrooms to building real-world data infrastructure — here's how I got here.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Education ── -->
+  <section>
+    <p class="section-label reveal">Education</p>
+    <h2 class="section-title reveal">Where it all <em style="font-style:italic;color:var(--teal)">began</em></h2>
+
+    <div class="reveal" style="margin-top:2.5rem">
+      <div class="edu-card">
+        <img class="edu-logo" src="pics/UTD.jpg" alt="UT Dallas logo"/>
+        <div class="edu-info">
+          <h3>The University of Texas at Dallas</h3>
+          <p><a href="https://infosystems.utdallas.edu/bs-cis-tech/" target="_blank" style="color:var(--teal);font-weight:600;text-decoration:none">Bachelor of Science in Information Technology and Systems</a></p>
+          <p style="color:var(--muted);font-size:.9rem"><a href="https://jindal.utdallas.edu/" target="_blank" style="color:var(--muted);text-decoration:none">Naveen Jindal School of Management</a></p>
+          <span class="edu-badge">Class of 2022</span>
         </div>
-      </nav>  
-        <div class="jumbotron">
-            <h1 class="display-4">About Me</h1>
-        </div>
-        
-        <section>
-          <h2>Educations <i class="fas fa-graduation-cap"></i></h2>
-          <div class="row">
-            <div class="col-md-3" id="Pics">
-              <img id="myPics" src="pics/mypic.jpeg" alt="Grad picture">
-            </div>
-            <div class="col-md-9">
-              <div id="Personal">
-                <img id="UTD" src="./pics/UTD.jpg" alt="UTDallas logo">
-                <p class="edu"><a href="https://infosystems.utdallas.edu/bs-cis-tech/">Bachelor of Science in Information Techonology and System</a>, class of 2022</p>
-                <p class="edu"><a href="https://jindal.utdallas.edu/">Naveen Jindal School of Management</a></p>
-                <p class="edu"><a href="https://www.utdallas.edu/">The University of Texas at Dallas</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Work Experience ── -->
+  <div class="bg-alt" style="padding:6rem 0">
+    <div style="max-width:1200px;margin:0 auto;padding:0 3rem">
+      <p class="section-label reveal">Work Experience</p>
+      <h2 class="section-title reveal">My <em style="font-style:italic;color:var(--teal)">journey</em> so far</h2>
+
+      <div class="timeline-v2" style="margin-top:3rem">
+
+        <!-- EAB Global -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Associate Data Engineer</div>
+                <div class="timeline-company">EAB Global</div>
               </div>
+              <span class="timeline-date">Jan 2023 — Present</span>
+            </div>
+            <ul>
+              <li>Develop data pipelines using DBT, Jinja, and AWS, storing results in Snowflake Data Warehouse.</li>
+              <li>Design Talend ETL jobs to backfill legacy system data and preserve data integrity.</li>
+              <li>Proficient in AWS services including S3, Step Functions, Lambda, and CloudWatch.</li>
+            </ul>
+            <div class="tech-chips">
+              <span class="tech-chip">DBT</span>
+              <span class="tech-chip">Snowflake</span>
+              <span class="tech-chip">AWS</span>
+              <span class="tech-chip">Jinja</span>
+              <span class="tech-chip">Talend</span>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section id="EducationAndWork">
-          <h2>Work Experiences <i class="fas fa-briefcase"></i></h2>
-          <div class="timeline"> 
-            
-            <div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
-              <div class="timeline__event__icon">
-                <i class="lni-burger"></i>
-
+        <!-- MH Solution -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Data Analyst Intern</div>
+                <div class="timeline-company">MH Solution</div>
               </div>
-              <div class="timeline__event__date">
-                1/2023-Now <br>
-                EAB Global
-              </div>
-              <div class="timeline__event__content">
-                <div class="timeline__event__title">
-                  Associate Data Engineer
-                </div>
-                <div class="timeline__event__description">
-                  <p>- Develop data pipeline using DBT, Jinja and AWS, storing on Snowflake Data Warehouse.</p>
-                  <p>- Design Talend ETL jobs to backfill legacy system data to preserve data integrity.</p>
-                  <p>- Proficient in AWS services such as S3, Step Functions, Lambda, and Cloudwatch.</p>
-                </div>
-              </div>
+              <span class="timeline-date">Jun 2022 — Aug 2022</span>
             </div>
-            <div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
-              <div class="timeline__event__icon">
-                <i class="lni-slim"></i>
-
-              </div>
-              <div class="timeline__event__date">
-                6-8/2022 <br>
-                MH Solution
-              </div>
-              <div class="timeline__event__content">
-                <div class="timeline__event__title">
-                  Data Analyst Intern
-                </div>
-                <div class="timeline__event__description">
-                  <p>- Build a ClickHouse Data Warehouse for client's product.</p>
-                  <p>- Use Airflow, SQL, and Python to create ETL process to load data to warehouse.</p>
-                  <p>- Build dashboard & report using Apache Superset for presentation.</p>
-                </div>
-
-              </div>
+            <ul>
+              <li>Built a ClickHouse Data Warehouse for a client's product.</li>
+              <li>Used Airflow, SQL, and Python to create ETL processes to load data into the warehouse.</li>
+              <li>Built dashboards and reports using Apache Superset for client presentations.</li>
+            </ul>
+            <div class="tech-chips">
+              <span class="tech-chip">ClickHouse</span>
+              <span class="tech-chip">Airflow</span>
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">SQL</span>
+              <span class="tech-chip">Superset</span>
             </div>
-            <div class="timeline__event animated fadeInUp timeline__event--type1">
-              <div class="timeline__event__icon">
-                <i class="lni-cake"></i>
-
-              </div>
-              <div class="timeline__event__date">
-                5-8/2021 <br>
-                Crewasis
-              </div>
-              <div class="timeline__event__content">
-                <div class="timeline__event__title">
-                  Data Scientist Intern
-                </div>
-                <div class="timeline__event__description">
-                  <p>- Use Python and data science packages to collect, validate, and analyze data for clients.</p>
-                  <p>- Develop dynamic Tableau dashboard to monitor and forecast client's business performance, identifying risks and market trends.</p>
-                  <p>- Set up and manage Google Analytics for client's website to improve UI and traffic.</p>
-                </div>
-              </div>
-            </div>
-
           </div>
-        </section>
+        </div>
 
+        <!-- Crewasis -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-role">Data Scientist Intern</div>
+                <div class="timeline-company">Crewasis</div>
+              </div>
+              <span class="timeline-date">May 2021 — Aug 2021</span>
+            </div>
+            <ul>
+              <li>Used Python and data science packages to collect, validate, and analyze data for clients.</li>
+              <li>Developed dynamic Tableau dashboards to monitor and forecast business performance, identifying risks and market trends.</li>
+              <li>Set up and managed Google Analytics to improve client website UI and traffic.</li>
+            </ul>
+            <div class="tech-chips">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">Tableau</span>
+              <span class="tech-chip">Google Analytics</span>
+              <span class="tech-chip">Data Science</span>
+            </div>
+          </div>
+        </div>
 
-          
-        </section>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>    
-    </body>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Skills ── -->
+  <div class="skills-section">
+    <div class="skills-inner">
+      <p class="section-label reveal">Tech Stack</p>
+      <h2 class="section-title reveal">Tools I <em style="font-style:italic;color:var(--teal)">work with</em></h2>
+      <div class="skills-grid reveal">
+        <div class="skill-card"><div class="skill-icon">🐍</div><div class="skill-name">Python</div></div>
+        <div class="skill-card"><div class="skill-icon">🗄️</div><div class="skill-name">SQL</div></div>
+        <div class="skill-card"><div class="skill-icon">❄️</div><div class="skill-name">Snowflake</div></div>
+        <div class="skill-card"><div class="skill-icon">☁️</div><div class="skill-name">AWS</div></div>
+        <div class="skill-card"><div class="skill-icon">🔧</div><div class="skill-name">DBT</div></div>
+        <div class="skill-card"><div class="skill-icon">🌊</div><div class="skill-name">Airflow</div></div>
+        <div class="skill-card"><div class="skill-icon">📊</div><div class="skill-name">Tableau</div></div>
+        <div class="skill-card"><div class="skill-icon">📦</div><div class="skill-name">Talend</div></div>
+        <div class="skill-card"><div class="skill-icon">🐘</div><div class="skill-name">ClickHouse</div></div>
+        <div class="skill-card"><div class="skill-icon">⚡</div><div class="skill-name">Superset</div></div>
+        <div class="skill-card"><div class="skill-icon">🐙</div><div class="skill-name">Git</div></div>
+        <div class="skill-card"><div class="skill-icon">🔢</div><div class="skill-name">Jinja</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA Banner ── -->
+  <div class="cta-banner reveal">
+    <h2>Interested in working together?</h2>
+    <p>I'm always open to new opportunities and interesting projects.</p>
+    <a href="contact.html" class="btn-white">Let's Connect</a>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-brand">Son Nguyen</div>
+    <span>Data & IT Enthusiast · Runner · Blogger</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="https://www.strava.com/athletes/122107573" target="_blank">Strava</a>
+      <a href="https://sonnyblog293497855.wordpress.com/" target="_blank">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script>
+    const reveals = document.querySelectorAll('.reveal, .timeline-item');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 120);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+</body>
 </html>
