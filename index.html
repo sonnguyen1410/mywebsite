@@ -1,68 +1,158 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="index.css">
-      <link rel="stylesheet" href="flag-icons-master/flag-icons.min.css">
-      <script src="https://kit.fontawesome.com/b6a920bf6f.js" crossorigin="anonymous"></script>
-      <title>Hey, I'm Son Nguyen</title>
-    </head>
-    <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <a class="navbar-brand" href="index.html">Son</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="aboutme.html">About Me</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://sonnyblog293497855.wordpress.com/">My Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>  
-        <div class="jumbotron">
-            <h1 class="display-4">Son Hai Nguyen</h1>
-            <p class="lead">Data & IT Enthusiast | Runner | Blogger</p>
-            <hr class="my-4">
-        </div>
-        
-        <section id="AboutMe">
-          <h2 id="AboutMeTitle">Hey, I'm Son.</h2>
-          <div class="row">
-            <div class="col-md-3" id="Pics">
-              <img id="myPics" src="pics/chillpic.jpg" alt="My picture">
-            </div>
-            <div class="col-md-9">
-              <div id="Personal">
-                <p>
-                  I am from Vietnam <i class="fi fi-vn"></i> , a beautiful "S-shaped" country in Southeast Asia.
-                  <br><br>
-                  Technology has always been my passion, that is why I came to the US to achieve higher education in Information Technology. <i class="fa-solid fa-computer"></i>.
-                  <br><br>
-                  Currently I am working as a Data Engineer, building robust data pipelines to transform raw data to actionable insights.
-                  <br><br>
-                  I am also a Runner (Check me out on <a href="https://www.strava.com/athletes/122107573">Strava!</a>) and working towards running a Full Marathon one day. 
-                  <br><br>
-                  I also write sometimes on <a href="https://sonnyblog293497855.wordpress.com/">Here</a> to fulfill my delusional dream of being a writer - much inspired from reading this <a href="https://www.goodreads.com/book/show/22628.The_Perks_of_Being_a_Wallflower">Book</a>. 
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/b6a920bf6f.js" crossorigin="anonymous"></script>
+  <title>Son Hai Nguyen — Data Engineer</title>
+</head>
+<body>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>    
-    </body>
+  <!-- ── Navigation ── -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" href="index.html">Son <span>Nguyen</span></a>
+    <button class="navbar-toggler" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutme.html">My Story</a></li>
+        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://sonnyblog293497855.wordpress.com/" target="_blank">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <div class="hero">
+    <!-- Decorative dot grid -->
+    <div class="hero-grid-decoration" id="dotGrid"></div>
+
+    <h1>
+      Hey, I'm Son <span class="wave">👋</span><br/>
+      <span class="accent">Data Enthusiast</span>
+    </h1>
+
+    <p class="hero-sub">
+      Building robust data pipelines that transform raw data into actionable insights. 
+      Currently based in Texas 🇺🇸, originally from Vietnam 🇻🇳.
+    </p>
+
+    <div class="hero-pills">
+      <span class="pill">Data Engineering</span>
+      <span class="pill">AWS</span>
+      <span class="pill">Snowflake</span>
+      <span class="pill">DBT</span>
+      <span class="pill">Python</span>
+      <span class="pill">SQL</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="portfolio.html" class="btn-primary-custom">View My Work</a>
+      <a href="contact.html" class="btn-outline-custom">Get in Touch</a>
+    </div>
+  </div>
+
+  <!-- ── About Snapshot ── -->
+  <section>
+    <p class="section-label reveal">About Me</p>
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal">
+        <img src="pics/chillpic.jpg" alt="Son Nguyen" />
+        <div class="about-photo-badge">📍 Nha Trang, Vietnam</div>
+      </div>
+      <div class="reveal">
+        <div class="about-body">
+          <p>
+            Hi there! My name is Son Nguyen. I'm originally from Vietnam — a beautiful "S-shaped" country in Southeast Asia. 
+            Technology has always been my passion, which is why I came to the US to pursue 
+            higher education in Information Technology.
+          </p>
+          <p>
+            Currently I work as a <strong>Data Engineer at <a href="https://eab.com/" target="_blank">EAB Global Inc.</a></strong>, building robust 
+            data pipelines using DBT, Snowflake, and AWS to transform raw data into actionable insights.
+          </p>
+          <p>
+            Outside of work, I'm a runner working towards my first Full Marathon 
+            — check me out on <a href="https://www.strava.com/athletes/122107573" target="_blank">Strava</a>! 
+            I also write occasionally on my <a href="https://sonnyblog293497855.wordpress.com/" target="_blank">blog</a>, 
+            inspired by this book - 
+            <a href="https://www.goodreads.com/book/show/22628.The_Perks_of_Being_a_Wallflower" target="_blank">The Perks of Being a Wallflower</a>.
+          </p>
+        </div>
+
+        <div class="fact-strip">
+          <div class="fact">
+            <div class="fact-icon">📕</div>
+            <div class="fact-label">Favorite Fiction</div>
+            <div class="fact-val">Second Sister by Chan Ho-Kei</div>
+          </div>
+          <div class="fact">
+            <div class="fact-icon">🎬</div>
+            <div class="fact-label">Favorite Movie</div>
+            <div class="fact-val">Forrest Gump</div>
+          </div>
+          <div class="fact">
+            <div class="fact-icon">🏃</div>
+            <div class="fact-label">Best Half Marathon</div>
+            <div class="fact-val">1:58:49</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-brand">Son Nguyen</div>
+    <span>Data & IT Enthusiast · Runner · Blogger</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="aboutme.html">My Story</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="https://sonnyblog293497855.wordpress.com/" target="_blank">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script>
+    document.querySelectorAll('.navbar').forEach((nav) => {
+      const toggle = nav.querySelector('.navbar-toggler');
+      const collapse = nav.querySelector('.navbar-collapse');
+      if (toggle && collapse) {
+        toggle.addEventListener('click', () => {
+          const isOpen = collapse.classList.contains('show');
+          collapse.classList.toggle('show', !isOpen);
+          toggle.setAttribute('aria-expanded', String(!isOpen));
+        });
+      }
+    });
+
+    // Generate dot grid
+    const grid = document.getElementById('dotGrid');
+    for (let i = 0; i < 64; i++) {
+      const span = document.createElement('span');
+      grid.appendChild(span);
+    }
+
+    // Scroll reveals
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 100);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+</body>
 </html>
